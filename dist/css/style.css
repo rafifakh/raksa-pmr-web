@@ -47,6 +47,40 @@ body {
   border-bottom: 2px solid var(--primary-red, #dc2626);
 }
 
+@media (max-width: 768px) {
+  /* Posisi menu dropdown melayang di bawah navbar */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+    border-top: 1px solid #f1f5f9;
+  }
+
+  /* Munculkan menu saat tombol hamburger ditekan */
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+header,
+.navbar,
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.0);
+}
+
 /* ================= HEADER & NAVBAR ================= */
 .main-header {
   position: sticky;
@@ -1228,5 +1262,12 @@ body {
   /* Pastikan tabel obat bisa digeser halus di layar sentuh */
   .med-table-wrapper {
     -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-logo {
+    gap: 8px;
+    max-width: calc(100% - 50px);
   }
 }

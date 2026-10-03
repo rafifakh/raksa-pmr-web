@@ -309,3 +309,19 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+const hamburgerBtn = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-links");
+
+if (hamburgerBtn && navMenu) {
+  hamburgerBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  // Tutup menu otomatis setelah salah satu tautan diklik
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+    });
+  });
+}

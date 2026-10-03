@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAKSA - Official PMR Web</title>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="assets/icon/Logo PMR.jpg"
+      type="image/png"
+    />
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="dist/css/style.css" />
+  </head>
+  <body>
+    <!-- ================= HEADER & NAVBAR ================= -->
+    <header class="main-header">
+      <div class="nav-container">
+        <!-- Brand / Logo -->
+        <a href="#" class="brand-logo">
+          <span class="logo-icon-wrap">
+            <img src="assets/icon/Logo RAKSA.jpg" alt="RAKSA"/>
+          </span>
+          <div class="brand-text">
+            <span class="brand-title">RAKSA</span>
+            <span class="brand-subtitle">Ruang Akses Kesehatan Siswa</span>
+          </div>
+        </a>
+
+        <!-- Menu Navigasi Desktop -->
+        <nav class="nav-links">
+          <a href="#beranda" class="active">Beranda</a>
+          <a href="#panduan-p3k">Aksi Cepat P3K</a>
+          <a href="#stok-obat" class="badge-nav">
+            <i class="fa-solid fa-kit-medical"></i> Logistik Medis
+          </a>
+          <a href="#bmi-calculator">Cek Bugar BMII</a>
+          <a href="#memories">Jejak PMR</a>
+        </nav>
+
+        <!-- Tombol Kontak Cepat & Tombol Toggle HP -->
+        <div class="nav-actions">
+          <a href="#kontak" class="btn-emergency">
+            <i class="fa-solid fa-phone-volume"></i> Siaga UKS
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Buka Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section" id="beranda">
+      <div class="hero-container">
+        <!-- Teks & Aksi -->
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Satu Ruang Siaga untuk <span>Kesehatan</span> Warga SMANDA.
+          </h1>
+          <p class="hero-desc">
+            Akses cepat panduan P3K harian, emergency call, cek ketersediaan
+            obat UKS secara real-time, dan hitung indeks massa tubuh (BMI) dalam
+            satu platform terpercaya.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#stok-obat" class="btn-primary">
+              <i class="fa-solid fa-box-tissue"></i> Cek Stok Obat
+            </a>
+            <a href="#panduan-p3k" class="btn-secondary">
+              Panduan P3K <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Mini Highlight Info -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Akses Edukasi & Layanan</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">Real-Time</span>
+              <span class="stat-label">Pantauan Stok & P3K</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Card Modern -->
+        <div class="hero-visual">
+          <div class="hero-card-glow"></div>
+          <div class="hero-card-box">
+            <div class="status-indicator">
+              <span class="pulse-dot"></span>
+              <span>Digitalisasi Layanan UKS</span>
+            </div>
+
+            <div class="card-icon-main">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <h3>Transformasi Kesehatan Digital</h3>
+            <p>
+              Menerapkan digitalisasi dalam kehidupan sehari-hari sekolah untuk
+              menghadirkan akses layanan UKS, edukasi medis, dan pemantauan
+              kesehatan yang lebih cepat, transparan, serta terintegrasi bagi
+              seluruh warga SMANDA.
+            </p>
+
+            <div class="card-quick-info">
+              <div class="info-row">
+                <i class="fa-solid fa-clock"></i>
+                <span>Akses Digital: Aktif 24/7 Setiap Hari</span>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Layanan Daring: Portal Resmi RAKSA SMANDA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= POIN 1: PANDUAN P3K SEHARI-HARI ================= -->
+    <section class="section-block" id="panduan-p3k">
+      <div class="container-inner">
+        <div class="section-header text-center">
+          <span class="sub-badge"
+            ><i class="fa-solid fa-hand-holding-medical"></i> Panduan P3K</span
+          >
+          <h2 class="section-title">Pertolongan Pertama Kasus Sehari-hari</h2>
+          <p class="section-subtitle">
+            Langkah cepat dan tepat yang bisa kamu lakukan sebelum korban
+            mendapatkan penanganan lebih lanjut di UKS.
+          </p>
+        </div>
+
+        <div class="p3k-grid">
+          <!-- Kasus 1: Asma -->
+          <div class="p3k-card">
+            <div class="p3k-img-wrap">
+              <img src="assets/image/Asma.jpg" alt="Panduan Penanganan Asma" />
+            </div>
+            <div class="p3k-body">
+              <div class="p3k-header">
+                <div class="p3k-icon"><i class="fa-solid fa-lungs"></i></div>
+                <h3>Serangan Asma</h3>
+              </div>
+              <ol>
+                <li>
+                  Tenangkan penderita agar ritme napas lebih stabil dan teratur.
+                </li>
+                <li>
+                  Bantu duduk tegak atau agak membungkuk, hindari posisi
+                  terlentang.
+                </li>
+                <li>
+                  Buka pakaian yang ketat di leher dan dada agar pernapasan
+                  lega.
+                </li>
+                <li>Bantu gunakan inhaler pribadinya sesuai dosis anjuran.</li>
+                <li>
+                  Pindahkan dari area berdebu, berasap, atau bersuhu dingin.
+                </li>
+                <li>
+                  Segera bawa ke fasilitas medis jika kondisi memburuk atau
+                  bibir membiru.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- Kasus 2: Keseleo -->
+          <div class="p3k-card">
+            <div class="p3k-img-wrap">
+              <img
+                src="assets/image/Keseleo.jpg"
+                alt="Panduan Penanganan Keseleo"
+              />
+            </div>
+            <div class="p3k-body">
+              <div class="p3k-header">
+                <div class="p3k-icon"><i class="fa-solid fa-bone"></i></div>
+                <h3>Keseleo</h3>
+              </div>
+              <ol>
+                <li>
+                  <strong>Rest (Istirahat):</strong> Hentikan aktivitas dan
+                  istirahatkan bagian yang cedera.
+                </li>
+                <li>
+                  <strong>Ice (Kompres Dingin):</strong> Kompres es berbalut
+                  kain selama 15–20 menit untuk redakan bengkak.
+                </li>
+                <li>
+                  <strong>Compression (Balut Tekan):</strong> Balut area cedera
+                  dengan perban elastis secara pas.
+                </li>
+                <li>
+                  <strong>Elevation (Tinggikan):</strong> Posisikan bagian yang
+                  cedera lebih tinggi dari jantung.
+                </li>
+              </ol>
+              <div class="p3k-warning">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span
+                  ><strong>Catatan:</strong> Jangan diurut/dipijat karena bisa
+                  memperparah cedera jaringan.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Kasus 3: Luka Bakar -->
+          <div class="p3k-card">
+            <div class="p3k-img-wrap">
+              <img
+                src="assets/image/Luka Bakar.jpg"
+                alt="Panduan Penanganan Luka Bakar"
+              />
+            </div>
+            <div class="p3k-body">
+              <div class="p3k-header">
+                <div class="p3k-icon">
+                  <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <h3>Luka Bakar Ringan</h3>
+              </div>
+              <ol>
+                <li>
+                  Basuh luka di bawah air bersih mengalir selama 15–20 menit
+                  (jangan pakai es).
+                </li>
+                <li>
+                  Lepaskan pakaian/perhiasan di sekitar luka, kecuali jika sudah
+                  menempel pada kulit.
+                </li>
+                <li>
+                  Tutup luka secara longgar dengan kasa steril untuk mencegah
+                  infeksi kuman.
+                </li>
+              </ol>
+              <div class="p3k-warning">
+                <i class="fa-solid fa-ban"></i>
+                <span
+                  >Hindari odol, mentega, atau minyak, dan jangan memecahkan
+                  gelembung kulit.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Kasus 4: Luka Lecet -->
+          <div class="p3k-card">
+            <div class="p3k-img-wrap">
+              <img
+                src="assets/image/Luka Lecet.jpg"
+                alt="Panduan Penanganan Luka Lecet"
+              />
+            </div>
+            <div class="p3k-body">
+              <div class="p3k-header">
+                <div class="p3k-icon"><i class="fa-solid fa-bandage"></i></div>
+                <h3>Luka Lecet</h3>
+              </div>
+              <ol>
+                <li>
+                  Cuci tangan pakai sabun sebelum menyentuh luka untuk cegah
+                  kuman.
+                </li>
+                <li>
+                  Bilas luka dengan air mengalir atau cairan steril untuk
+                  membuang kotoran.
+                </li>
+                <li>
+                  Tekan luka perlahan dengan kasa steril bila masih ada rembesan
+                  darah.
+                </li>
+                <li>
+                  Tutup menggunakan plester atau kasa steril dari gesekan dan
+                  debu.
+                </li>
+                <li>
+                  Ganti balutan secara berkala (minimal sehari sekali) agar
+                  tetap kering dan bersih.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabel Stok -->
+     <section class="stock-block bg-white" id="stok-obat">
+      <div class="container-inner">
+        <div class="section-header text-center">
+          <span class="sub-badge"><i class="fa-solid fa-box-medical"></i>Manajemen Logistik UKS</span>
+          <h2 class="section-title">Logistik Medis</h2>
+          <p class="section-subtitle">
+            Pantau ketersediaan obat-obatan, perban, dan antiseptik UKN secara transparan dan berkala.
+          </p> 
+        </div>
+
+        <div class="med-filter-bar">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="medSearch" placeholder="Cari nama obat (misal: Paracetamol, Betadine)..." />
+        </div>
+        <div class="filter-tags">
+          <button class="filter-btn active" data-category="all">Semua</button>
+          <button class="filter-btn" data-category="umum">Obat Umum</button>
+          <button class="filter-btn" data-category="p3k">P3K & Luka</button>
+          <button class="filter-btn" data-category="khusus">Khusus</button>
+        </div>
+      </div>
+
+<!-- Tabel Stok -->
+    <div class="med-table-wrapper">
+      <table class="med-table">
+        <thead>
+          <tr>
+            <th>Nama Obat / Logistik</th>
+            <th>Kategori</th>
+            <th>Khasiat / Kegunaan</th>
+            <th>Sisa Stok</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="medTableBody">
+          <tr>
+            <td colspan="5" style="text-align: center; padding: 28px; color: #64748b;">
+              <i class="fa-solid fa-spinner fa-spin"></i> Memuat data stok dari Google Sheets...
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="stock-note">
+      <i class="fa-solid fa-circle-info"></i> Data diperbarui rutin oleh Pengurus Divisi UKS PMR.
+    </p>
+  </div>
+</section>
+
+    <!-- ================= POIN 4: KALKULATOR BMI UKS ================= -->
+    <section class="section-block" id="bmi-calculator">
+      <div class="container-inner">
+        <div class="bmi-grid">
+          <!-- Deskripsi -->
+          <div class="bmi-info-text">
+            <span class="sub-badge"
+              ><i class="fa-solid fa-weight-scale"></i> Cek Kesehatan
+              Mandiri</span
+            >
+            <h2 class="section-title">Kalkulator BMI Digital</h2>
+            <p class="section-subtitle">
+              Hitung indeks massa tubuh untuk memantau berat badan ideal dan
+              status nutrisi tubuhmu.
+            </p>
+
+            <div class="bmi-category-reference">
+              <div class="ref-item">
+                <span class="ref-dot dot-blue"></span>
+                <div>
+                  <strong>&lt; 18,5</strong>
+                  <span>Berat Badan Kurang</span>
+                </div>
+              </div>
+              <div class="ref-item">
+                <span class="ref-dot dot-green"></span>
+                <div>
+                  <strong>18,5 – 24,9</strong>
+                  <span>Normal (Ideal)</span>
+                </div>
+              </div>
+              <div class="ref-item">
+                <span class="ref-dot dot-yellow"></span>
+                <div>
+                  <strong>25,0 – 29,9</strong>
+                  <span>Kelebihan Berat Badan</span>
+                </div>
+              </div>
+              <div class="ref-item">
+                <span class="ref-dot dot-red"></span>
+                <div>
+                  <strong>&ge; 30,0</strong>
+                  <span>Obesitas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Hitung -->
+          <div class="bmi-card">
+            <form id="bmiForm">
+              <div class="input-group-row">
+                <div class="input-field">
+                  <label for="bmiWeight">Berat Badan (kg)</label>
+                  <input
+                    type="number"
+                    step="0.1"
+                    id="bmiWeight"
+                    placeholder="Contoh: 55"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label for="bmiHeight">Tinggi Badan (cm)</label>
+                  <input
+                    type="number"
+                    step="0.1"
+                    id="bmiHeight"
+                    placeholder="Contoh: 165"
+                    required
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="btn-calculate">
+                <i class="fa-solid fa-calculator"></i> Hitung BMI Sekarang
+              </button>
+            </form>
+
+            <!-- Hasil Perhitungan -->
+            <div
+              class="bmi-result-card"
+              id="bmiResultBox"
+              style="display: none"
+            >
+              <div class="result-number" id="bmiValue">0.0</div>
+              <div class="result-label" id="bmiStatus">Normal</div>
+              <p class="result-desc" id="bmiDesc">
+                Berat badanmu ideal. Pertahankan pola makan sehat dan aktivitas
+                fisik teratur!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- ======================= SECTION: DOKUMENTASI KEGIATAN ==============-->
+<section class="section-block bg-white" id="memories">
+  <div class="container-inner">
+    <div class="section-header text-center">
+      <span class="sub-badge"><i class="fa-solid fa-camera"></i> Galeri Dokumentasi</span>
+      <h2 class="section-title">Memories</h2>
+      <p class="section-subtitle">
+        Rekam jejak kebersamaan, dedikasi, serta berbagai aktivitas pelatihan
+        dan aksi kemanusiaan relawan PMR.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- 1. Bakti Sosial -->
+      <div class="gallery-card">
+        <div class="gallery-img-wrap">
+          <img src="assets/image/Memories/Bakti Sosial.jpg" alt="Bakti Sosial PMR" />
+          <span class="gallery-tag">Sosial</span>
+        </div>
+        <div class="gallery-body">
+          <h4>Aksi Bakti Sosial Kemanusiaan</h4>
+          <p>Bentuk kepedulian sosial relawan PMR dengan menyalurkan bantuan dan berbagi berkah kepada sesama.</p>
+        </div>
+      </div>
+
+      <!-- 2. Jumbara -->
+      <div class="gallery-card">
+        <div class="gallery-img-wrap">
+          <img src="assets/image/Memories/Jumbara.jpg" alt="Kontingen Jumbara PMR" />
+          <span class="gallery-tag">Jumbara</span>
+        </div>
+        <div class="gallery-body">
+          <h4>Jumpa Bakti Gembira (JUMBARA)</h4>
+          <p>Ajang temu, uji ketangkasan, dan kebersamaan relawan PMR tingkat kota dalam suasana gembira.</p>
+        </div>
+      </div>
+
+      <!-- 3. Latihan Fisik -->
+      <div class="gallery-card">
+        <div class="gallery-img-wrap">
+          <img src="assets/image/Memories/Latihan Fisik.jpg" alt="Latihan Fisik Relawan PMR" />
+          <span class="gallery-tag">Latihan</span>
+        </div>
+        <div class="gallery-body">
+          <h4>Latihan Ketahanan Fisik & Kedisiplinan</h4>
+          <p>Pembinaan fisik, stamina, dan daya tahan tubuh di lapangan guna menunjang kesiapsiagaan tugas pertolongan.</p>
+        </div>
+      </div>
+
+      <!-- 4. Latihan Gabungan -->
+      <div class="gallery-card">
+        <div class="gallery-img-wrap">
+          <img src="assets/image/Memories/Latihan Gabungan.jpg" alt="Latihan Gabungan PMR" />
+          <span class="gallery-tag">Latgab</span>
+        </div>
+        <div class="gallery-body">
+          <h4>Latihan Gabungan PMR</h4>
+          <p>Simulasi tindakan darurat terpadu bersama PMR sekolah lain untuk mempererat sinergi kerelawanan.</p>
+        </div>
+      </div>
+
+      <!-- 5. P3LP -->
+      <div class="gallery-card">
+        <div class="gallery-img-wrap">
+          <img src="assets/image/Memories/P3LP dan Skrining Kesehatan Jiwa.jpg" alt="Sosialisasi P3LP dan Skrining Kesehatan Jiwa" />
+          <span class="gallery-tag">Kesehatan</span>
+        </div>
+        <div class="gallery-body">
+          <h4>P3LP & Skrining Kesehatan Jiwa</h4>
+          <p>Edukasi Pertolongan Pertama Layanan Psikologis serta pemeriksaan kesehatan mental bagi warga sekolah.</p>
+        </div>
+      </div>
+
+      <!-- 6. Pelantikan Slayer -->
+      <div class="gallery-card">
+        <div class="gallery-img-wrap">
+          <img src="assets/image/Memories/Pelantikan Slayer.jpg" alt="Pelantikan Slayer" />
+          <span class="gallery-tag">Pelantikan</span>
+        </div>
+        <div class="gallery-body">
+          <h4>Prosesi Pelantikan Slayer</h4>
+          <p>Pemberian slayer resmi sebagai simbol pengukuhan komitmen dan kesiapan moral anggota baru PMR.</p>
+        </div>
+      </div>
+
+      <!-- 7. Pelantikan Topi -->
+      <div class="gallery-card">
+        <div class="gallery-img-wrap">
+          <img src="assets/image/Memories/Pelantikan Topi.jpg" alt="Pelantikan Topi" />
+          <span class="gallery-tag">Pelantikan</span>
+        </div>
+        <div class="gallery-body">
+          <h4>Upacara Pelantikan Topi Lapangan</h4>
+          <p>Penyematan topi lapangan resmi sebagai kelengkapan atribut siaga operasional relawan di sekolah.</p>
+        </div>
+      </div>
+
+      <!-- 8. Pelatihan Medis UNIMUS -->
+      <div class="gallery-card">
+        <div class="gallery-img-wrap">
+          <img src="assets/image/Memories/Pelatihan kader pmr dengan UNIMUS.jpg" alt="Pelatihan Kader Medis Bersama UNIMUS" />
+          <span class="gallery-tag">Pelatihan</span>
+        </div>
+        <div class="gallery-body">
+          <h4>Pelatihan Kader Medis UNIMUS</h4>
+          <p>Peningkatan kapasitas dan keterampilan kader UKS melalui workshop kesehatan terpadu bersama tim medis UNIMUS.</p>
+        </div>
+      </div>
+
+      <!-- 9. Riset Kanker Serviks UNDIP -->
+      <div class="gallery-card">
+        <div class="gallery-img-wrap">
+          <img src="assets/image/Memories/Penelitian Terkait Kanker Serviks oleh Universitas Diponegoro.jpg" alt="Penelitian dan Sosialisasi Kanker Serviks UNDIP" />
+          <span class="gallery-tag">Riset</span>
+        </div>
+        <div class="gallery-body">
+          <h4>Riset & Sosialisasi Kanker Serviks UNDIP</h4>
+          <p>Partisipasi dalam edukasi dan penelitian pencegahan kanker serviks bersama akademisi Fakultas Kedokteran UNDIP.</p>
+        </div>
+      </div>
+
+      <!-- 10. Pertemuan PMR Kota Semarang -->
+      <div class="gallery-card">
+        <div class="gallery-img-wrap">
+          <img src="assets/image/Memories/Pertemuan PMR SE Kota Semarang_.jpg" alt="Temu Akbar PMR se-Kota Semarang" />
+          <span class="gallery-tag">Forum</span>
+        </div>
+        <div class="gallery-body">
+          <h4>Pertemuan PMR se-Kota Semarang</h4>
+          <p>Forum musyawarah, koordinasi program kerja, dan temu jejaring relawan PMR se-Kota Semarang.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= POIN 2: EMERGENCY CALL / LAPOR UKS ================= -->
+<section class="section-block emergency-section" id="kontak">
+  <div class="container-inner">
+    <div class="section-header text-center">
+      <span class="sub-badge badge-emergency">
+        <i class="fa-solid fa-bell"></i> Panggilan Darurat Medis
+      </span>
+      <h2 class="section-title text-white">Emergency Call</h2>
+      <p class="section-subtitle text-white-muted">
+        Butuh pertolongan medis segera di area sekolah? Hubungi petugas
+        piket atau tim siaga PMR di bawah ini.
+      </p>
+    </div>
+
+    <div class="emergency-grid">
+      <!-- Petugas 1 -->
+      <div class="emergency-card">
+        <div class="officer-status online"></div>
+        <div class="emergency-icon-wrap">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <h3>Petugas Piket UKS 1</h3>
+        <div class="emergency-actions">
+          <a
+            href="https://wa.me/6289653549565?text=Halo%20UKS,%20butuh%20bantuan%20pertolongan%20pertama"
+            target="_blank"
+            class="btn-wa"
+          >
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="tel:+6289653549565" class="btn-call">
+            <i class="fa-solid fa-phone"></i> Telepon
+          </a>
+        </div>
+      </div>
+
+      <!-- Petugas 2 -->
+      <div class="emergency-card">
+        <div class="officer-status online"></div>
+        <div class="emergency-icon-wrap">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <h3>Petugas Piket UKS 2</h3>
+        <div class="emergency-actions">
+          <a
+            href="https://wa.me/6288210406260?text=Halo%20Tim%20PMR,%20ada%20kondisi%20darurat"
+            target="_blank"
+            class="btn-wa"
+          >
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="tel:+6288210406260" class="btn-call">
+            <i class="fa-solid fa-phone"></i> Telepon
+          </a>
+        </div>
+      </div>
+
+      <!-- Petugas 3 -->
+      <div class="emergency-card">
+        <div class="officer-status online"></div>
+        <div class="emergency-icon-wrap">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <h3>Petugas Piket UKS 3</h3>
+        <div class="emergency-actions">
+          <a
+            href="https://wa.me/6285859053199?text=Permisi%20Kak,%20konfirmasi%20laporan%20medis"
+            target="_blank"
+            class="btn-wa"
+          >
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="tel:+6285859053199" class="btn-call">
+            <i class="fa-solid fa-phone"></i> Telepon
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- JS Utama -->
+    <script src="dist/js/script.js"></script>
+  </body>
+</html>

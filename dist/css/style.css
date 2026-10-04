@@ -687,21 +687,24 @@ nav {
 
 .med-table-wrapper {
   background: var(--white);
-  border-radius: 16px;
+  border-radius: 14px;
   overflow-x: auto;
   border: 1px solid #e2e8f0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
   max-width: 1050px;
-  margin: 0 auto;
+  margin-bottom: 16px;
   border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .med-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  min-width: 650px;
+  min-width: 620px;
 }
 
 .med-table th {
@@ -1206,6 +1209,14 @@ nav {
   .emergency-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+
+  @media (max-width: 640px) {
+    .med-table th,
+    .med-table td {
+      padding: 12px 14px;
+      font-size: 13px;
+    }
   }
 
   /* Filter bar stok obat bertumpuk rapi */

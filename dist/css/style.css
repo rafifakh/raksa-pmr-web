@@ -41,46 +41,6 @@ body {
   box-sizing: border-box;
 }
 
-.nav-links a.active {
-  color: var(--primary-red, #dc2626) !important;
-  font-weight: 700;
-  border-bottom: 2px solid var(--primary-red, #dc2626);
-}
-
-@media (max-width: 768px) {
-  /* Posisi menu dropdown melayang di bawah navbar */
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    flex-direction: column;
-    padding: 20px;
-    gap: 16px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
-    border-top: 1px solid #f1f5f9;
-  }
-
-  /* Munculkan menu saat tombol hamburger ditekan */
-  .nav-links.active {
-    display: flex;
-  }
-}
-
-header,
-.navbar,
-nav {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #ffffff;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
-}
-
 /* ================= HEADER & NAVBAR ================= */
 .main-header {
   position: sticky;
@@ -94,31 +54,35 @@ nav {
   border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-/* Kontainer utama navbar desktop */
-.nav-container,
-.navbar {
-  max-width: 1200px;
+/* Kontainer pembagi 3 zona: Kiri (Logo), Tengah (Menu), Kanan (Tombol) */
+.nav-container {
+  max-width: 1240px;
+  width: 100%;
   margin: 0 auto;
   padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
 }
 
-/* Brand Logo (Hilangkan garis bawah biru tautan) */
+/* 1. Brand Logo */
+a.brand-logo,
+a.brand-logo:hover,
+a.brand-logo * {
+  text-decoration: none !important;
+}
+
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
-  text-decoration: none !important;
   color: inherit;
 }
 
 .logo-icon-wrap {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,40 +98,36 @@ nav {
 .brand-text {
   display: flex;
   flex-direction: column;
-  text-decoration: none !important;
 }
 
 .brand-title {
   font-size: 19px;
   font-weight: 800;
-  color: var(--dark-red, #991b1b);
+  color: var(--dark-red);
   line-height: 1.1;
-  text-decoration: none !important;
 }
 
 .brand-subtitle {
   font-size: 13px;
   font-weight: 500;
   color: #1e1c4b;
-  text-decoration: none !important;
 }
 
-/* Nav Links Menu Tengah */
+/* 2. Menu Navigasi Tengah */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
+  gap: 24px;
+  margin: 0 auto; /* PENTING: Mengunci menu tepat di tengah antara logo & tombol */
+  padding: 0 20px;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-main, #334155);
+  color: var(--text-main);
   white-space: nowrap;
   transition: color 0.2s ease;
   position: relative;
@@ -176,10 +136,9 @@ nav {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--primary-red, #dc2626);
+  color: var(--primary-red);
 }
 
-/* Indikator garis merah bawah menu aktif */
 .nav-links a.active::after {
   content: "";
   position: absolute;
@@ -187,11 +146,11 @@ nav {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--primary-red, #dc2626);
+  background-color: var(--primary-red);
   border-radius: 2px;
 }
 
-/* Tombol Khusus Menu Stok Obat */
+/* Badge Logistik Medis */
 .badge-nav {
   background: #f1f5f9;
   padding: 6px 14px !important;
@@ -200,34 +159,35 @@ nav {
 }
 
 .badge-nav::after {
-  display: none !important; /* Hilangkan garis bawah untuk badge */
+  display: none !important;
 }
 
 .badge-nav:hover {
-  background: #fee2e2;
-  color: #dc2626 !important;
+  background: var(--soft-red);
+  color: var(--primary-red) !important;
 }
 
-/* Tombol Emergency / Siaga UKS di Ujung Kanan */
+/* 3. Aksi Kanan (Siaga UKS & Toggle HP) */
 .nav-actions {
   display: flex;
   align-items: center;
-  flex-shrink: 0; /* Mencegah tombol hilang/terdorong keluar layar */
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .btn-emergency {
-  display: inline-flex !important;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--primary-red, #dc2626);
-  color: #ffffff !important;
-  padding: 10px 18px;
+  background: var(--primary-red);
+  color: var(--white) !important;
+  padding: 10px 20px;
   border-radius: 12px;
   text-decoration: none !important;
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
-  white-space: nowrap !important;
+  white-space: nowrap;
   flex-shrink: 0;
   transition: transform 0.2s ease, background 0.2s ease;
 }
@@ -237,7 +197,6 @@ nav {
   transform: translateY(-1px);
 }
 
-/* Tombol Menu HP */
 .nav-toggle {
   display: none;
   background: none;
@@ -245,11 +204,30 @@ nav {
   font-size: 22px;
   color: var(--text-main);
   cursor: pointer;
+  padding: 4px;
 }
 
-/* ================= RESPONSIF NAVBAR ================= */
-@media (max-width: 768px) {
+/* ================= RESPONSIF LAYAR HP ================= */
+@media (max-width: 850px) {
   .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .btn-emergency {
     display: none;
   }
 
@@ -257,8 +235,8 @@ nav {
     display: block;
   }
 
-  .btn-emergency {
-    display: none;
+  .brand-subtitle {
+    font-size: 11px;
   }
 }
 

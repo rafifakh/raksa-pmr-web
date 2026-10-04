@@ -325,3 +325,19 @@ if (hamburgerBtn && navMenu) {
     });
   });
 }
+
+if (history.scrollRestoration) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("beforeunload", () => {
+  window.scrollTo(0, 0);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  if(window.location.hash) {
+    history.replaceState(null, null, window.location.pathname);
+  }
+
+  window.scrollTo(0, 0);
+});

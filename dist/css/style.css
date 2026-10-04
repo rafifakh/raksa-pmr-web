@@ -82,53 +82,46 @@ nav {
 }
 
 /* ================= HEADER & NAVBAR ================= */
-.navbar,
-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 32px;
-  max-width: 1240px;
-  margin: 0 auto;
-  gap: 24px;
-}
-
 .main-header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   z-index: 1000;
   border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-.nav-container {
+/* Kontainer utama navbar desktop */
+.nav-container,
+.navbar {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
-/* Brand Logo */
+/* Brand Logo (Hilangkan garis bawah biru tautan) */
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+  text-decoration: none !important;
+  color: inherit;
 }
 
 .logo-icon-wrap {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   flex-shrink: 0;
 }
 
@@ -136,93 +129,112 @@ header nav {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  display: block;
-}
-
-.brand-logo:hover .logo-icon-wrap {
-  transform: scale(1.05);
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
+  text-decoration: none !important;
 }
 
 .brand-title {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 800;
-  color: var(--dark-red);
-  line-height: 1.2;
+  color: var(--dark-red, #991b1b);
+  line-height: 1.1;
+  text-decoration: none !important;
 }
 
 .brand-subtitle {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   color: #1e1c4b;
+  text-decoration: none !important;
 }
 
-/* Nav Links */
+/* Nav Links Menu Tengah */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
-  margin: 0 auto;
+  gap: 20px;
   flex-shrink: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--text-main, #334155);
   white-space: nowrap;
   transition: color 0.2s ease;
+  position: relative;
+  padding: 6px 0;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--primary-red);
+  color: var(--primary-red, #dc2626);
+}
+
+/* Indikator garis merah bawah menu aktif */
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-red, #dc2626);
+  border-radius: 2px;
 }
 
 /* Tombol Khusus Menu Stok Obat */
 .badge-nav {
   background: #f1f5f9;
-  padding: 6px 14px;
+  padding: 6px 14px !important;
   border-radius: 20px;
   color: #334155 !important;
 }
 
-.badge-nav:hover {
-  background: var(--soft-red);
-  color: var(--primary-red) !important;
+.badge-nav::after {
+  display: none !important; /* Hilangkan garis bawah untuk badge */
 }
 
-/* Tombol Emergency / Hubungi UKS */
+.badge-nav:hover {
+  background: #fee2e2;
+  color: #dc2626 !important;
+}
+
+/* Tombol Emergency / Siaga UKS di Ujung Kanan */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  flex-shrink: 0; /* Mencegah tombol hilang/terdorong keluar layar */
 }
 
 .btn-emergency {
   display: inline-flex !important;
   align-items: center;
   gap: 8px;
-  background: var(--primary-red);
-  color: var(--white);
-  padding: 9px 18px;
+  background: var(--primary-red, #dc2626);
+  color: #ffffff !important;
+  padding: 10px 18px;
   border-radius: 12px;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 13.5px;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
-  transition: background 0.2s ease, transform 0.1s ease;
   white-space: nowrap !important;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .btn-emergency:hover {
-  background: var(--dark-red);
-  transform: translateY(-2px);
+  background: #b91c1c;
+  transform: translateY(-1px);
 }
 
 /* Tombol Menu HP */

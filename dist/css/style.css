@@ -78,7 +78,7 @@ nav {
   width: 100%;
   background: #ffffff;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
 }
 
 /* ================= HEADER & NAVBAR ================= */
@@ -1216,6 +1216,72 @@ nav {
     .med-table td {
       padding: 12px 14px;
       font-size: 13px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    /* Hilangkan border pembungkus desktop */
+    .med-table-wrapper {
+      border: none;
+      background: transparent;
+    }
+
+    /* Sembunyikan header tabel bawaan desktop */
+    .med-table thead {
+      display: none;
+    }
+
+    .med-table,
+    .med-table tbody {
+      display: block;
+      width: 100%;
+      min-width: 100% !important;
+    }
+
+    /* Ubah setiap baris obat menjadi kartu putih mandiri */
+    .med-table tbody tr {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      gap: 8px;
+    }
+
+    /* Atur setiap data dalam kartu */
+    .med-table td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 !important;
+      border: none !important;
+      font-size: 13px;
+    }
+
+    /* Nama Obat dibuat paling atas & tebal */
+    .med-table td:nth-child(1) {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e293b;
+      border-bottom: 1px solid #f1f5f9 !important;
+      padding-bottom: 8px !important;
+    }
+
+    /* Khasiat obat */
+    .med-table td:nth-child(3) {
+      color: #64748b;
+      font-size: 12.5px;
+      line-height: 1.4;
+    }
+
+    /* Sisa stok dan status ditaruh berdampingan di bawah */
+    .med-table td:nth-child(4),
+    .med-table td:nth-child(5) {
+      display: inline-flex;
+      font-weight: 600;
     }
   }
 

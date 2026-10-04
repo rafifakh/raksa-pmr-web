@@ -833,6 +833,10 @@ nav {
   padding: 35px 30px;
   border-radius: 20px;
   border: 1px solid #e2e8f0;
+  width: 100% !important;
+  max-width: 480px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .input-group-row {
@@ -1047,6 +1051,34 @@ nav {
 
   .bmi-category-reference {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:640px) {
+  .bmi-grid,
+  .bmi-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .bmi-card {
+    width: 100% !important;
+    padding: 20px 16px !important;
+    margin: 0 auto !important;
+  }
+
+  .bmi-input-group,
+  .bmi-inputs {
+    grid-template-columns: 1fr !important; /* Hindari 2 kolom menyamping di HP */
+    width: 100%;
+  }
+
+  .bmi-card input {
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
 

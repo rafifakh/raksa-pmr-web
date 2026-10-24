@@ -278,12 +278,12 @@ window.addEventListener("scroll", () => {
 
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 120;
+    const sectionTop = current.offsetTop - 130; // Toleransi offset navbar
     const sectionId = current.getAttribute("id");
-    const navLink = document.querySelector(`.nav-links a[href*="${sectionId}"]`);
+    const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
 
     if (navLink) {
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
         navLink.classList.add("active");
       } else {
         navLink.classList.remove("active");

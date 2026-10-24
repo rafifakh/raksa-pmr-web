@@ -150,21 +150,38 @@ a.brand-logo * {
   border-radius: 2px;
 }
 
-/* Badge Logistik Medis */
+/* Styling Badge Logistik Medis */
 .badge-nav {
   background: #f1f5f9;
   padding: 6px 14px !important;
   border-radius: 20px;
   color: #334155 !important;
-}
-
-.badge-nav::after {
-  display: none !important;
+  transition: all 0.2s ease;
 }
 
 .badge-nav:hover {
   background: var(--soft-red);
   color: var(--primary-red) !important;
+}
+
+/* Saat Logistik Medis sedang aktif dilewati scroll */
+.badge-nav.active {
+  background: var(--soft-red) !important;
+  color: var(--primary-red) !important;
+  font-weight: 700;
+}
+
+/* Biarkan garis bawah merah tetap muncul di bawah badge */
+.badge-nav.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 14px;
+  right: 14px;
+  width: auto;
+  height: 2.5px;
+  background-color: var(--primary-red);
+  border-radius: 2px;
 }
 
 /* 3. Aksi Kanan (Siaga UKS & Toggle HP) */

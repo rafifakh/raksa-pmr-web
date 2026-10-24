@@ -9,6 +9,7 @@
 :root {
   --primary-red: #dc2626;
   --dark-red: #991b1b;
+  --accent-red: #b91c1c;
   --soft-red: #fee2e2;
   --text-main: #1f2937;
   --text-muted: #64748b;
@@ -33,7 +34,7 @@ body {
 .section-block,
 #beranda,
 #stok-obat,
-#bmi {
+#bmi-calculator {
   min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
@@ -54,7 +55,6 @@ body {
   border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-/* Kontainer pembagi 3 zona: Kiri (Logo), Tengah (Menu), Kanan (Tombol) */
 .nav-container {
   max-width: 1240px;
   width: 100%;
@@ -110,7 +110,7 @@ a.brand-logo * {
 .brand-subtitle {
   font-size: 13px;
   font-weight: 500;
-  color: #1e1c4b;
+  color: #7f1d1d; /* Nuansa maroon merah */
 }
 
 /* 2. Menu Navigasi Tengah */
@@ -118,7 +118,7 @@ a.brand-logo * {
   display: flex;
   align-items: center;
   gap: 24px;
-  margin: 0 auto; /* PENTING: Mengunci menu tepat di tengah antara logo & tombol */
+  margin: 0 auto;
   padding: 0 20px;
   list-style: none;
 }
@@ -193,8 +193,12 @@ a.brand-logo * {
 }
 
 .btn-emergency:hover {
-  background: #b91c1c;
+  background: var(--dark-red);
   transform: translateY(-1px);
+}
+
+.mobile-emergency-btn {
+  display: none !important;
 }
 
 .nav-toggle {
@@ -207,7 +211,7 @@ a.brand-logo * {
   padding: 4px;
 }
 
-/* ================= RESPONSIF LAYAR HP ================= */
+/* ================= RESPONSIF LAYAR HP (NAVBAR) ================= */
 @media (max-width: 850px) {
   .nav-links {
     display: none;
@@ -227,6 +231,20 @@ a.brand-logo * {
     display: flex;
   }
 
+  .mobile-emergency-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--primary-red) !important;
+    color: #ffffff !important;
+    padding: 12px !important;
+    border-radius: 12px;
+    font-weight: 700 !important;
+    margin-top: 6px;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+  }
+
   .btn-emergency {
     display: none;
   }
@@ -242,10 +260,10 @@ a.brand-logo * {
 
 /* ================= HERO SECTION ================= */
 .hero-section {
-  padding: 80px 20px 60px;
+  padding: 70px 20px 60px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fef2f2 100%); /* Sentuhan lembut merah */
 }
 
 .hero-container {
@@ -273,7 +291,7 @@ a.brand-logo * {
   font-size: 15.5px;
   color: var(--text-muted);
   line-height: 1.7;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   max-width: 540px;
 }
 
@@ -281,21 +299,22 @@ a.brand-logo * {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
+/* Dominan Merah Utama */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #1e1c4b;
+  background: var(--primary-red);
   color: var(--white);
   padding: 13px 26px;
   border-radius: 12px;
   text-decoration: none;
   font-weight: 700;
   font-size: 14.5px;
-  box-shadow: 0 8px 20px rgba(38, 93, 220, 0.25);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.28);
   transition: all 0.2s ease;
 }
 
@@ -308,8 +327,8 @@ a.brand-logo * {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #f1f5f9;
-  color: var(--text-main);
+  background: #fee2e2;
+  color: var(--dark-red);
   padding: 13px 24px;
   border-radius: 12px;
   text-decoration: none;
@@ -319,7 +338,41 @@ a.brand-logo * {
 }
 
 .btn-secondary:hover {
-  background: #e2e8f0;
+  background: #fecaca;
+}
+
+/* Tombol Emergency Cepat di Hero (POV Mobile & Akses Langsung) */
+.hero-quick-emergency {
+  margin-bottom: 28px;
+}
+
+.btn-quick-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff1f2;
+  border: 1.5px dashed #f43f5e;
+  color: #9f1239;
+  padding: 11px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 13.5px;
+  transition: all 0.2s ease;
+}
+
+.btn-quick-call strong {
+  color: #be123c;
+  text-decoration: underline;
+}
+
+.btn-quick-call i:first-child {
+  color: #e11d48;
+}
+
+.btn-quick-call:hover {
+  background: #ffe4e6;
+  border-color: #e11d48;
+  transform: translateY(-1px);
 }
 
 .hero-stats {
@@ -327,7 +380,7 @@ a.brand-logo * {
   align-items: center;
   gap: 25px;
   padding-top: 20px;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #fecaca;
   max-width: 450px;
 }
 
@@ -351,7 +404,7 @@ a.brand-logo * {
 .stat-divider {
   width: 1px;
   height: 35px;
-  background-color: #cbd5e1;
+  background-color: #fca5a5;
 }
 
 .hero-visual {
@@ -365,7 +418,7 @@ a.brand-logo * {
   transform: translate(-50%, -50%);
   width: 280px;
   height: 280px;
-  background: rgba(220, 38, 38, 0.15);
+  background: rgba(220, 38, 38, 0.2);
   filter: blur(50px);
   border-radius: 50%;
   z-index: 1;
@@ -377,16 +430,16 @@ a.brand-logo * {
   background: var(--white);
   border-radius: 20px;
   padding: 35px 30px;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(254, 202, 202, 0.7);
+  box-shadow: 0 20px 40px rgba(153, 27, 27, 0.08);
 }
 
 .status-indicator {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #ecfdf5;
-  color: #059669;
+  background: #fef2f2;
+  color: #b91c1c;
   font-size: 12.5px;
   font-weight: 700;
   padding: 5px 12px;
@@ -397,9 +450,9 @@ a.brand-logo * {
 .pulse-dot {
   width: 8px;
   height: 8px;
-  background: #10b981;
+  background: #dc2626;
   border-radius: 50%;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
   animation: pulseDot 2s infinite ease-in-out;
 }
 
@@ -407,17 +460,17 @@ a.brand-logo * {
   0% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.6);
   }
   50% {
     opacity: 0.35;
     transform: scale(0.85);
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0);
   }
   100% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.6);
   }
 }
 
@@ -453,7 +506,7 @@ a.brand-logo * {
   flex-direction: column;
   gap: 10px;
   padding-top: 15px;
-  border-top: 1px dashed #e2e8f0;
+  border-top: 1px dashed #fecaca;
 }
 
 .info-row {
@@ -466,7 +519,7 @@ a.brand-logo * {
 }
 
 .info-row i {
-  color: #1e1c4b;
+  color: var(--primary-red);
 }
 
 /* ================= SECTION UMUM ================= */
@@ -515,7 +568,6 @@ a.brand-logo * {
 }
 
 /* ================= PANDUAN P3K ================= */
-
 .p3k-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -526,28 +578,23 @@ a.brand-logo * {
 }
 
 .p3k-card {
-  background: var(--white, #ffffff);
-  border: 1px solid #f1f5f9;
+  background: var(--white);
+  border: 1px solid #fee2e2;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  max-width: 100%;
 }
 
 .p3k-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
 }
 
 .p3k-img-wrap {
   width: 100%;
-  aspect-ratio: 166 / 9;
   height: 220px;
   background-color: #f8fafc;
   overflow: hidden;
@@ -566,7 +613,7 @@ a.brand-logo * {
 }
 
 .p3k-body {
-  padding: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -576,15 +623,15 @@ a.brand-logo * {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .p3k-icon {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background-color: #fee2e2;
-  color: #dc2626;
+  background-color: var(--soft-red);
+  color: var(--primary-red);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -600,7 +647,7 @@ a.brand-logo * {
 }
 
 .p3k-body ol {
-  padding-left: 18px;
+  padding-left: 20px;
   margin: 0 0 14px 0;
   color: #475569;
   font-size: 13.5px;
@@ -608,18 +655,18 @@ a.brand-logo * {
 }
 
 .p3k-body ol li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   line-height: 1.7;
 }
 
 .p3k-warning {
   margin-top: auto;
   background-color: #fef2f2;
-  border-left: 4px solid #ef4444;
+  border-left: 4px solid var(--primary-red);
   padding: 12px 16px;
   border-radius: 6px;
   font-size: 12.5px;
-  color: #991b1b;
+  color: var(--dark-red);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -627,8 +674,6 @@ a.brand-logo * {
 
 .p3k-warning i {
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
 }
 
 /* ================= STOK OBAT ================= */
@@ -652,6 +697,10 @@ a.brand-logo * {
   border-radius: 12px;
   width: 100%;
   max-width: 380px;
+}
+
+.search-input-box:focus-within {
+  border-color: var(--primary-red);
 }
 
 .search-input-box i {
@@ -697,11 +746,8 @@ a.brand-logo * {
   border: 1px solid #e2e8f0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
   max-width: 1050px;
-  margin-bottom: 16px;
-  border-radius: 16px;
-  overflow: hidden;
+  margin: 0 auto 16px;
   width: 100%;
-  max-width: 100%;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -713,12 +759,12 @@ a.brand-logo * {
 }
 
 .med-table th {
-  background: #f8fafc;
+  background: #fff5f5; /* Sentuhan merah sangat lembut */
   padding: 16px 20px;
   font-size: 13px;
   font-weight: 700;
-  color: #475569;
-  border-bottom: 1px solid #e2e8f0;
+  color: var(--dark-red);
+  border-bottom: 1px solid #fee2e2;
 }
 
 .med-table td {
@@ -729,7 +775,7 @@ a.brand-logo * {
 }
 
 .med-table tr:hover {
-  background: #fafafa;
+  background: #fffafa;
 }
 
 .tag-cat {
@@ -760,13 +806,12 @@ a.brand-logo * {
 
 .status-danger {
   background: #fee2e2;
-  color: #dc2626;
+  color: var(--primary-red);
 }
 
 .stock-note {
   font-size: 12px;
   color: var(--text-muted);
-  margin-top: 14px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -793,9 +838,10 @@ a.brand-logo * {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--bg-light);
+  background: var(--white);
   padding: 12px 14px;
   border-radius: 12px;
+  border: 1px solid #e2e8f0;
 }
 
 .ref-dot {
@@ -805,18 +851,10 @@ a.brand-logo * {
   flex-shrink: 0;
 }
 
-.dot-blue {
-  background: #3b82f6;
-}
-.dot-green {
-  background: #10b981;
-}
-.dot-yellow {
-  background: #f59e0b;
-}
-.dot-red {
-  background: #ef4444;
-}
+.dot-blue { background: #3b82f6; }
+.dot-green { background: #10b981; }
+.dot-yellow { background: #f59e0b; }
+.dot-red { background: #ef4444; }
 
 .ref-item div {
   display: flex;
@@ -834,14 +872,15 @@ a.brand-logo * {
 }
 
 .bmi-card {
-  background: var(--bg-light);
+  background: var(--white);
   padding: 35px 30px;
   border-radius: 20px;
   border: 1px solid #e2e8f0;
-  width: 100% !important;
+  width: 100%;
   max-width: 480px;
   box-sizing: border-box;
   margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
 }
 
 .input-group-row {
@@ -899,10 +938,10 @@ a.brand-logo * {
 .bmi-result-card {
   margin-top: 24px;
   padding: 20px;
-  background: var(--white);
+  background: #fef2f2;
   border-radius: 14px;
   text-align: center;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #fee2e2;
 }
 
 .result-number {
@@ -926,7 +965,7 @@ a.brand-logo * {
   line-height: 1.5;
 }
 
-/* ================= SECTION MEMORIES / GALERI FOTO ================= */
+/* ================= SECTION MEMORIES ================= */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -936,7 +975,7 @@ a.brand-logo * {
 }
 
 .gallery-card {
-  background: var(--white, #ffffff);
+  background: var(--white);
   border: 1px solid #f1f5f9;
   border-radius: 16px;
   overflow: hidden;
@@ -948,7 +987,7 @@ a.brand-logo * {
 
 .gallery-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.09);
 }
 
 .gallery-img-wrap {
@@ -971,12 +1010,11 @@ a.brand-logo * {
   transform: scale(1.05);
 }
 
-/* Badge Kategori Melayang di Atas Foto */
 .gallery-tag {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(153, 27, 27, 0.85); /* Nuansa merah transparan */
   backdrop-filter: blur(4px);
   color: #ffffff;
   font-size: 11px;
@@ -995,129 +1033,35 @@ a.brand-logo * {
 .gallery-body h4 {
   font-size: 16px;
   font-weight: 700;
-  color: var(--text-main, #0f172a);
+  color: var(--text-main);
   margin-bottom: 6px;
 }
 
 .gallery-body p {
   font-size: 13px;
-  color: var(--text-muted, #64748b);
+  color: var(--text-muted);
   line-height: 1.6;
   margin: 0;
 }
 
-/* ================= FOOTER =======================*/
-.site-footer {
-  background-color: #0f172a;
-  color: #94a3b8;
-  padding: 30px 20px;
-  text-align: center;
-  font-size: 13px;
-  border-top: 1px solid #1e293b;
-}
-
-.footer-bottom p {
-  margin: 4px 0;
-}
-
-/* ================= RESPONSIF HP ================= */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 40px 15px;
-  }
-
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .hero-title {
-    font-size: 28px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    justify-content: center;
-  }
-
-  .hero-stats {
-    justify-content: space-around;
-  }
-
-  .section-title {
-    font-size: 24px;
-  }
-
-  .p3k-grid,
-  .prestasi-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .bmi-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .input-group-row {
-    grid-template-columns: 1fr;
-  }
-
-  .bmi-category-reference {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width:640px) {
-  .bmi-grid,
-  .bmi-wrapper {
-    grid-template-columns: 1fr !important;
-    gap: 20px;
-    width: 100%;
-    padding: 0 16px;
-    box-sizing: border-box;
-  }
-
-  .bmi-card {
-    width: 100% !important;
-    padding: 20px 16px !important;
-    margin: 0 auto !important;
-  }
-
-  .bmi-input-group,
-  .bmi-inputs {
-    grid-template-columns: 1fr !important; /* Hindari 2 kolom menyamping di HP */
-    width: 100%;
-  }
-
-  .bmi-card input {
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-}
-
 /* ================= EMERGENCY SECTION ================= */
 .emergency-section {
-  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
-  color: var(--white, #ffffff);
+  background: linear-gradient(135deg, #450a0a 0%, #1f0404 100%); /* Dominan merah gelap medis */
+  color: var(--white);
 }
 
 .badge-emergency {
-  background: rgba(220, 38, 38, 0.2);
+  background: rgba(220, 38, 38, 0.25);
   color: #fca5a5;
 }
 
 .text-white {
-  color: var(--white, #ffffff);
+  color: var(--white);
 }
 
 .text-white-muted {
-  color: #94a3b8;
+  color: #fca5a5;
+  opacity: 0.9;
 }
 
 .emergency-grid {
@@ -1130,8 +1074,8 @@ a.brand-logo * {
 
 .emergency-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(254, 202, 202, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 28px 22px;
@@ -1141,7 +1085,7 @@ a.brand-logo * {
 
 .emergency-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(220, 38, 38, 0.5);
+  border-color: rgba(239, 68, 68, 0.6);
 }
 
 .officer-status {
@@ -1159,29 +1103,11 @@ a.brand-logo * {
   animation: pulseDot 2s infinite ease-in-out;
 }
 
-@keyframes pulseDot {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
-  }
-  50% {
-    opacity: 0.35;
-    transform: scale(0.85);
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
-  }
-}
-
 .emergency-icon-wrap {
   width: 58px;
   height: 58px;
-  background: rgba(220, 38, 38, 0.2);
-  color: #ef4444;
+  background: rgba(220, 38, 38, 0.25);
+  color: #fca5a5;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -1193,7 +1119,7 @@ a.brand-logo * {
 .emergency-card h3 {
   font-size: 16.5px;
   font-weight: 700;
-  color: var(--white, #ffffff);
+  color: var(--white);
   margin-bottom: 20px;
 }
 
@@ -1227,7 +1153,7 @@ a.brand-logo * {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(220, 38, 38, 0.4);
   color: #ffffff;
   padding: 10px;
   border-radius: 10px;
@@ -1238,23 +1164,152 @@ a.brand-logo * {
 }
 
 .btn-call:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(220, 38, 38, 0.6);
 }
 
-/* ================= RESPONSIVE TABLET & HP ================= */
+/* ================= FOOTER ================= */
+.site-footer {
+  background-color: #2b0404; /* Merah pekat penutup */
+  color: #fca5a5;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 13px;
+  border-top: 1px solid #450a0a;
+}
 
-/* Tablet & Mobile (Layar <= 992px) */
+.footer-bottom p {
+  margin: 4px 0;
+}
+
+.footer-sub {
+  font-size: 12px;
+  color: #f87171;
+}
+
+/* ================= MODAL PERINGATAN KERAS EMERGENCY ================= */
+.warning-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.warning-modal-overlay.active {
+  display: flex;
+}
+
+.warning-modal-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  padding: 32px 26px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.4);
+  border: 2px solid #ef4444;
+  animation: modalPop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.warning-modal-icon {
+  width: 70px;
+  height: 70px;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 16px;
+  box-shadow: 0 0 0 8px #fef2f2;
+}
+
+.warning-modal-title {
+  color: #991b1b;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.warning-modal-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #1f2937;
+  font-weight: 600;
+  margin-bottom: 24px;
+  background: #fff1f2;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #fecaca;
+}
+
+.warning-modal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-modal-cancel {
+  flex: 1;
+  padding: 12px;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn-modal-cancel:hover {
+  background: #e2e8f0;
+}
+
+.btn-modal-confirm {
+  flex: 1.4;
+  padding: 12px;
+  background: #dc2626;
+  color: #ffffff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
+  transition: background 0.2s;
+}
+
+.btn-modal-confirm:hover {
+  background: #991b1b;
+}
+
+/* ================= RESPONSIF TABLET & HP ================= */
 @media (max-width: 992px) {
-  /* Hilangkan paksaan 100vh di tablet/hp agar tidak sesak / teks terpotong */
   .section-block,
   #beranda,
   #stok-obat,
-  #bmi {
+  #bmi-calculator {
     min-height: auto;
     padding: 60px 20px;
   }
 
-  /* Grid 2 kolom di tablet */
   .p3k-grid,
   .gallery-grid,
   .emergency-grid {
@@ -1262,81 +1317,6 @@ a.brand-logo * {
     gap: 20px;
   }
 
-  @media (max-width: 640px) {
-    .med-table th,
-    .med-table td {
-      padding: 12px 14px;
-      font-size: 13px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    /* Hilangkan border pembungkus desktop */
-    .med-table-wrapper {
-      border: none;
-      background: transparent;
-    }
-
-    /* Sembunyikan header tabel bawaan desktop */
-    .med-table thead {
-      display: none;
-    }
-
-    .med-table,
-    .med-table tbody {
-      display: block;
-      width: 100%;
-      min-width: 100% !important;
-    }
-
-    /* Ubah setiap baris obat menjadi kartu putih mandiri */
-    .med-table tbody tr {
-      display: flex;
-      flex-direction: column;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-      gap: 8px;
-    }
-
-    /* Atur setiap data dalam kartu */
-    .med-table td {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 !important;
-      border: none !important;
-      font-size: 13px;
-    }
-
-    /* Nama Obat dibuat paling atas & tebal */
-    .med-table td:nth-child(1) {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1e293b;
-      border-bottom: 1px solid #f1f5f9 !important;
-      padding-bottom: 8px !important;
-    }
-
-    /* Khasiat obat */
-    .med-table td:nth-child(3) {
-      color: #64748b;
-      font-size: 12.5px;
-      line-height: 1.4;
-    }
-
-    /* Sisa stok dan status ditaruh berdampingan di bawah */
-    .med-table td:nth-child(4),
-    .med-table td:nth-child(5) {
-      display: inline-flex;
-      font-weight: 600;
-    }
-  }
-
-  /* Filter bar stok obat bertumpuk rapi */
   .med-filter-bar {
     flex-direction: column;
     align-items: stretch;
@@ -1354,9 +1334,38 @@ a.brand-logo * {
   }
 }
 
-/* Smartphone Layar Kecil (Layar <= 640px) */
-@media (max-width: 640px) {
-  /* Semua grid otomatis 1 kolom penuh di HP */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 16px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: space-around;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
   .p3k-grid,
   .gallery-grid,
   .emergency-grid {
@@ -1364,7 +1373,26 @@ a.brand-logo * {
     gap: 16px;
   }
 
-  /* Proporsi foto P3K dan Galeri pas di layar genggam */
+  .bmi-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .input-group-row {
+    grid-template-columns: 1fr;
+  }
+
+  .bmi-category-reference {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-logo {
+    gap: 8px;
+    max-width: calc(100% - 50px);
+  }
+
   .p3k-img-wrap {
     height: 180px;
   }
@@ -1373,29 +1401,73 @@ a.brand-logo * {
     aspect-ratio: 16 / 9;
   }
 
-  /* Font judul section lebih proporsional di HP */
-  .section-title {
-    font-size: 24px;
-  }
-
-  .section-subtitle {
-    font-size: 13px;
-  }
-
-  /* Tombol emergency call stack vertikal */
   .emergency-actions {
     grid-template-columns: 1fr;
   }
 
-  /* Pastikan tabel obat bisa digeser halus di layar sentuh */
-  .med-table-wrapper {
-    -webkit-overflow-scrolling: touch;
+  .bmi-card {
+    padding: 20px 16px !important;
   }
-}
 
-@media (max-width: 640px) {
-  .brand-logo {
+  /* Tabel Responsif Menjadi Kartu di HP */
+  .med-table-wrapper {
+    border: none;
+    background: transparent;
+  }
+
+  .med-table thead {
+    display: none;
+  }
+
+  .med-table,
+  .med-table tbody {
+    display: block;
+    width: 100%;
+    min-width: 100% !important;
+  }
+
+  .med-table tbody tr {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #fee2e2;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
     gap: 8px;
-    max-width: calc(100% - 50px);
+  }
+
+  .med-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 !important;
+    border: none !important;
+    font-size: 13px;
+  }
+
+  .med-table td:nth-child(1) {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    border-bottom: 1px solid #fee2e2 !important;
+    padding-bottom: 8px !important;
+  }
+
+  .med-table td:nth-child(3) {
+    color: #64748b;
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+
+  .med-table td:nth-child(4),
+  .med-table td:nth-child(5) {
+    display: inline-flex;
+    font-weight: 600;
+  }
+
+  .warning-modal-actions {
+    flex-direction: column-reverse;
   }
 }
